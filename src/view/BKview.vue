@@ -1,50 +1,53 @@
 <template>
-  <h1>Luas Belah Ketupat</h1>
-  <FormBK @form="hitungLuas($event)" />
+  <h1>Luas dan Keliling Belah Ketupat</h1>
+  <FormBK @form="hitungLuas($event), hitungKeliling($event)" />
   <h3>Keliling</h3>
-  <FormBK @form="hitungKeliling($event)" />
-  <SummaryBK :sisi="sisi" :luas="luas" :diameter="diameter" :keliling="keliling" />
+  <h3>{{ state.keliling }}</h3>
+  <!-- <SummaryBK :sisi="sisi" :luas="luas" :diameter="diameter" :keliling="keliling" /> -->
+  <h3>Luas</h3>
+  <h3>{{ state.luas }}</h3>
   <div class="margin">
     <router-link to="/"> <button>Home</button></router-link>
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
-import router from "./router";
-import SummaryBK from "./components/SummaryBK.vue";
+import { reactive } from "vue";
+// import router from "./router";
+// import SummaryBK from "./components/SummaryBK.vue";
 import FormBK from "./components/FormBK.vue";
 
 export default {
   name: "App",
 
   components: {
-    SummaryBK,
+    // SummaryBK,
     FormBK,
   },
-  methods: {
-    toBK() {
-      router.push({ path: "/belahketupat" });
-    },
-  },
   setup() {
-    const sisi = ref(0);
-    const diameter = ref(3.14);
-    const luas = ref(0);
-    // const keliling = ref(0);
-
+    const state = reactive({
+      sisi: 0,
+      d1: 0,
+      d2: 0,
+      luas: 0,
+      keliling: 0,
+    });
     function hitungLuas(event) {
-      luas.value = parseFloat(event.diameter) * parseFloat(event.diameter) * 0.5;
+      state.luas = parseFloat(event.d1) * parseFloat(event.d2) * 0.5;
     }
-    // function hitungKeliling(event) {
-    //   keliling.value = 4 * sisi.value;
-    // }
+    function hitungKeliling(event) {
+      state.keliling = 4 * event.sisi;
+    }
 
     return {
+      // eslint-disable-next-line no-undef
       sisi,
-      diameter,
-      luas,
+      // eslint-disable-next-line no-undef
+      d1,
+      // eslint-disable-next-line no-undef
+      d2,
       hitungLuas,
+      hitungKeliling,
     };
   },
 };
