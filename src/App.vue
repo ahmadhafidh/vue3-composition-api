@@ -1,45 +1,11 @@
 <template>
-  <h1> Luas Segitiga</h1>
-  <Form @form="hitungLuas($event)" />
-  <h3> Luas</h3>
-  <h1> {{ luas }} </h1>
-  <Summary :alas="alas" :tinggi="tinggi" :luas="luas" />
+  <div id="nav">
+    <router-link to="/">Home</router-link> | <router-link to="/belah-ketupat">Belah Ketupat</router-link> |
+    <router-link to="/trapesium">Trapesium</router-link> |
+    <router-link to="/jajar-genjang">Jajar Genjang</router-link>
+  </div>
+  <router-view />
 </template>
-
-<script>
-import { ref } from 'vue'
-import Summary from './components/Summary.vue'
-import Form from './components/Form.vue'
-
-export default {
-  name: 'App',
-
-  components:{
-    Summary,
-    Form
-  },
-  setup(){
-    const alas = ref(0);
-    const tinggi = ref(0);
-    const luas = ref(0);
-
-    function hitungLuas(event){
-      luas.value = parseFloat(event.alas) * parseFloat(event.tinggi) * 0.5;
-      alas.value = event.alas;
-      tinggi.value = event.tinggi;
-    }
-
-    return {
-      alas,
-      tinggi,
-      luas,
-      hitungLuas
-    }
-  }
-
-
-}
-</script>
 
 <style>
 #app {
@@ -48,6 +14,42 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+  background: #fafafa;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-active {
+  color: #42b983;
   margin-top: 60px;
+}
+.wrapper {
+  width: 100%;
+}
+.form-control {
+  margin: 0 auto;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-control input {
+  margin-top: 7px;
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 350px;
 }
 </style>
