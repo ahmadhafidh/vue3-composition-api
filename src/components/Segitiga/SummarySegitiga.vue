@@ -6,11 +6,11 @@
 
 <script>
 export default {
-     props: {
-         alas: Number,
-         tinggi: Number,
-         luas: Number,
-     }
+    props: {
+        alas: Number,
+        tinggi: Number,
+        luas: Number,
+    }
 }
 </script>
 
