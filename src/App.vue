@@ -1,10 +1,12 @@
 <template>
-  <div id="nav">
+  <div class="view">
+    <router-view />
+  </div>
+  <div id="menu">
     <router-link to="/">Home</router-link> | <router-link to="/belah-ketupat">Belah Ketupat</router-link> |
     <router-link to="/trapesium">Trapesium</router-link> |
     <router-link to="/jajar-genjang">Jajar Genjang</router-link>
   </div>
-  <router-view />
 </template>
 
 <style>
@@ -16,17 +18,21 @@
   color: #2c3e50;
 }
 
-#nav {
+.view {
+  height: 320px;
+}
+
+#menu {
   padding: 30px;
   background: #fafafa;
 }
 
-#nav a {
+#menu a {
   font-weight: bold;
   color: #2c3e50;
 }
 
-#nav a.router-link-active {
+#menu a.router-link-active {
   color: #42b983;
   margin-top: 60px;
 }
