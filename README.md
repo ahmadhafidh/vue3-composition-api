@@ -1,4 +1,4 @@
-# livecompositionapi
+# vue3-composition-api
 
 ## Project setup
 ```
