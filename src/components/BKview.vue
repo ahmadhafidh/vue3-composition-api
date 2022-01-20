@@ -14,14 +14,12 @@
 <script>
 import { reactive } from "vue";
 // import router from "./router";
-import SummaryBK from "./components/SummaryBK.vue";
-import FormBK from "./components/FormBK.vue";
+import FormBK from "@/components/FormBK.vue";
 
 export default {
   name: "App",
 
   components: {
-    SummaryBK,
     FormBK,
   },
   setup() {
