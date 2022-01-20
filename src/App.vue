@@ -8,6 +8,7 @@
   <router-link to="/belahketupat">Belah Ketupat </router-link>
   <router-link to="/jajargenjang">Jajar Genjang</router-link>
   <router-link to="/trapesium">Belah Ketupat</router-link>
+  <router-view />
 </template>
 
 <script>
