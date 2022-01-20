@@ -5,9 +5,10 @@
   <h1>{{ luas }}</h1>
   <Summary :alas="alas" :tinggi="tinggi" :luas="luas" />
 
+  <router-link to="/">Home </router-link>
   <router-link to="/belahketupat">Belah Ketupat </router-link>
   <router-link to="/jajargenjang">Jajar Genjang</router-link>
-  <router-link to="/trapesium">Belah Ketupat</router-link>
+  <router-link to="/trapesium">Trapesium</router-link>
   <router-view />
 </template>
 

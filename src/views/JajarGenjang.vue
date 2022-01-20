@@ -1,51 +1,42 @@
 <template>
-  <h1>Luas dan Keliling Belah Ketupat</h1>
-  <FormBK @form="hitungLuas($event), hitungKeliling($event)" />
+  <h1>Luas dan Keliling Jajar Genjang</h1>
+  <FormJG @form="hitungLuasKeliling($event)" />
   <h3>Keliling</h3>
   <h3>{{ state.keliling }}</h3>
-  <SummaryBK />
   <h3>Luas</h3>
   <h3>{{ state.luas }}</h3>
-  <div class="margin">
-    <router-link to="/"> <button>Home</button></router-link>
-  </div>
 </template>
 
 <script>
 import { reactive } from "vue";
 // import router from "./router";
-import FormBK from "@/components/FormBK.vue";
+import FormJG from "@/components/FormJG.vue";
 
 export default {
   name: "App",
 
   components: {
-    FormBK,
+    FormJG,
   },
   setup() {
     const state = reactive({
-      sisi: 0,
-      d1: 0,
-      d2: 0,
+      alas: 0,
+      tinggi: 0,
+      a: 0,
+      b: 0,
       luas: 0,
       keliling: 0,
     });
-    function hitungLuas(event) {
+    function hitungLuasKeliling(event) {
       state.luas = parseFloat(event.d1) * parseFloat(event.d2) * 0.5;
-    }
-    function hitungKeliling(event) {
       state.keliling = 4 * event.sisi;
+      state.alas = event.alas;
+      state.tinggi = event.tinggi;
     }
 
     return {
-      // eslint-disable-next-line no-undef
-      sisi,
-      // eslint-disable-next-line no-undef
-      d1,
-      // eslint-disable-next-line no-undef
-      d2,
-      hitungLuas,
-      hitungKeliling,
+      state,
+      hitungLuasKeliling,
     };
   },
 };
