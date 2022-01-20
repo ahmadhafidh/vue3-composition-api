@@ -1,5 +1,5 @@
 <template>
-  <h1>Luas Segitiga</h1>
+  <h1>Luas Jajar Genjang</h1>
   <label for="alas">Alas</label>
   <input v-model="state.alas" type="number" name="alas" />
 
