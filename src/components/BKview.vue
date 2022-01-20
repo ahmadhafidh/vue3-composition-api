@@ -3,7 +3,7 @@
   <FormBK @form="hitungLuas($event), hitungKeliling($event)" />
   <h3>Keliling</h3>
   <h3>{{ state.keliling }}</h3>
-  <!-- <SummaryBK :sisi="sisi" :luas="luas" :diameter="diameter" :keliling="keliling" /> -->
+  <SummaryBK />
   <h3>Luas</h3>
   <h3>{{ state.luas }}</h3>
   <div class="margin">
@@ -14,14 +14,14 @@
 <script>
 import { reactive } from "vue";
 // import router from "./router";
-// import SummaryBK from "./components/SummaryBK.vue";
+import SummaryBK from "./components/SummaryBK.vue";
 import FormBK from "./components/FormBK.vue";
 
 export default {
   name: "App",
 
   components: {
-    // SummaryBK,
+    SummaryBK,
     FormBK,
   },
   setup() {

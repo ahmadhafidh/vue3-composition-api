@@ -4,12 +4,10 @@
   <h3>Luas</h3>
   <h1>{{ luas }}</h1>
   <Summary :alas="alas" :tinggi="tinggi" :luas="luas" />
-  <button @click="toBK()">hmm</button>
-  <div class="margin">
-    <router-link to="/belahketupat"> <button>Belah Ketupat</button></router-link>
-    <router-link to="/jajargenjang">Jajar Genjang</router-link>
-    <router-link to="/trapesium">Belah Ketupat</router-link>
-  </div>
+
+  <router-link to="/belahketupat">Belah Ketupat </router-link>
+  <router-link to="/jajargenjang">Jajar Genjang</router-link>
+  <router-link to="/trapesium">Belah Ketupat</router-link>
 </template>
 
 <script>
@@ -59,8 +57,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-.margin {
-  padding: 3px;
 }
 </style>
