@@ -1,5 +1,4 @@
 <template>
-  <h1>Luas Segitiga</h1>
   <label for="alas">Alas</label>
   <input v-model="state.alas" type="number" name="alas" />
 

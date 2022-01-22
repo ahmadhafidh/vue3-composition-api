@@ -1,7 +1,9 @@
 <template>
-  <h1>Luas Jajar Genjang</h1>
-  <label for="alas">Alas</label>
-  <input v-model="state.alas" type="number" name="alas" />
+  <label for="alas">Sisi 1</label>
+  <input v-model="state.sisi1" type="number" name="sisi1" />
+
+  <label for="sisi2">Sisi 2</label>
+  <input v-model="state.sisi2" type="number" name="sisi2" />
 
   <label for="tinggi">Tinggi</label>
   <input v-model="state.tinggi" type="number" name="tinggi" />
@@ -13,7 +15,8 @@ import { reactive, watch } from "vue";
 export default {
   setup(props, context) {
     const state = reactive({
-      alas: 0,
+      sisi1: 0,
+      sisi2: 0,
       tinggi: 0,
     });
 

@@ -4,12 +4,16 @@
     <FormJajarGenjang @form="hitungLuasKeliling($event)" />
     <div class="result">
       <div>
-        <h3>Luas</h3>
-        <h1>{{ state.luas }}</h1>
+        <h3>Sisi 1</h3>
+        <h1>{{ state.sisi1 }}</h1>
       </div>
       <div>
-        <h3>Keliling</h3>
-        <h1>{{ state.keliling }}</h1>
+        <h3>Sisi 2</h3>
+        <h1>{{ state.sisi2 }}</h1>
+      </div>
+      <div>
+        <h3>Tinggi</h3>
+        <h1>{{ state.tinggi }}</h1>
       </div>
     </div>
   </div>
@@ -25,16 +29,16 @@ export default {
   },
   setup() {
     const state = reactive({
-      luas: 0,
-      keliling: 0,
       alas: 0,
       tinggi: 0,
+      a: 0,
+      b: 0,
+      luas: 0,
+      keliling: 0,
     });
     function hitungLuasKeliling(event) {
-      state.luas = event.alas * event.tinggi;
-      state.keliling = 2 * (event.alas + event.tinggi);
-      state.luas = event.luas;
-      state.keliling = event.keliling;
+      state.luas = parseFloat(event.d1) * parseFloat(event.d2) * 0.5;
+      state.keliling = 4 * event.sisi;
       state.alas = event.alas;
       state.tinggi = event.tinggi;
     }

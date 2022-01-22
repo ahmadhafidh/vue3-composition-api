@@ -1,11 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "@/App.vue";
 
 const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: () => import("../views/Segitiga.vue"),
   },
   {
     path: "/belah-ketupat",
