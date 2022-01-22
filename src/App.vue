@@ -1,18 +1,14 @@
 <template>
+  <h1>Luas Segitiga</h1>
   <Form @form="hitungLuas($event)" />
   <h3>Luas</h3>
   <h1>{{ luas }}</h1>
   <Summary :alas="alas" :tinggi="tinggi" :luas="luas" />
-  <router-view/>
-    <router-link to="/BelahKetupat">
-      <button color="primary">Keliling dan Luas Belah Ketupat</button>
-    </router-link>
-    <router-link to="/JajarGenjang">
-      <button color="primary">Keliling dan Luas Trapesium</button>
-    </router-link>
-    <router-link to="/Trapesium">
-      <button color="primary">Keliling dan Luas Jajar Genjang</button>
-    </router-link>
+
+  <router-link to="/belah-ketupat">Belah Ketupat </router-link>
+  <router-link to="/jajar-genjang">Jajar Genjang</router-link>
+  <router-link to="/trapesium">Trapesium</router-link>
+  <router-view />
 </template>
 
 <script>

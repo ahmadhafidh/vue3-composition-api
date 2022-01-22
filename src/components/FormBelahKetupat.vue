@@ -1,31 +1,40 @@
 <template>
-  <h1>Luas Belah Ketupat</h1>
-  <label for="alas">Alas</label>
-  <input v-model="state.alas" type="number" name="alas" />
+  <div class="wrapper">
+    <div class="form-control">
+      <label for="sisi">Sisi</label>
+      <input v-model.number="state.sisi" type="number" name="sisi" />
+    </div>
 
-  <label for="tinggi">Tinggi</label>
-  <input v-model="state.tinggi" type="number" name="tinggi" />
+    <div class="form-control">
+      <label for="diagonal1">Diagonal1</label>
+      <input v-model.number="state.diagonal1" type="number" name="diagonal1" />
+    </div>
+
+    <div class="form-control">
+      <label for="diagonal2">Diagonal2</label>
+      <input v-model.number="state.diagonal2" type="number" name="diagonal2" />
+    </div>
+  </div>
 </template>
 
 <script>
-import { reactive, watch } from "vue";
+import { reactive, watch } from 'vue'
 
 export default {
   setup(props, context) {
     const state = reactive({
-      alas: 0,
-      tinggi: 0,
-    });
+      sisi: 0,
+      diagonal1: 0,
+      diagonal2: 0,
+    })
 
     watch(state, () => {
-      context.emit("form", state);
-    });
+      context.emit('form', state)
+    })
 
     return {
       state,
-    };
+    }
   },
-};
+}
 </script>
-
-<style></style>
